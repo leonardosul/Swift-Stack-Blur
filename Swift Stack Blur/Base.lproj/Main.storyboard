@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Swift_Stack_Blur" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-hO-4UB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="4E8-oO-Gdi">
+                                <rect key="frame" x="200" y="531" width="200" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="fgc-e8-WUc"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="blurSlideChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="pHB-1R-Ttn"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NVw-hO-4UB" secondAttribute="bottom" id="3qt-0E-RTw"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="4E8-oO-Gdi" secondAttribute="bottom" constant="39" id="4dD-ag-UEP"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="4E8-oO-Gdi" secondAttribute="bottom" constant="39" id="4hm-4H-dmC"/>
+                            <constraint firstAttribute="centerX" secondItem="NVw-hO-4UB" secondAttribute="centerX" id="92Z-zH-jMx"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NVw-hO-4UB" secondAttribute="bottom" id="F6T-L4-4w9"/>
+                            <constraint firstAttribute="centerY" secondItem="NVw-hO-4UB" secondAttribute="centerY" id="FXq-r2-bdG"/>
+                            <constraint firstAttribute="centerX" secondItem="4E8-oO-Gdi" secondAttribute="centerX" constant="-0.5" id="GSf-Xs-b7p"/>
+                            <constraint firstAttribute="centerX" secondItem="4E8-oO-Gdi" secondAttribute="centerX" id="en7-rj-SCz"/>
+                            <constraint firstItem="NVw-hO-4UB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="nBL-dY-DbT"/>
+                            <constraint firstItem="4E8-oO-Gdi" firstAttribute="centerX" secondItem="NVw-hO-4UB" secondAttribute="centerX" id="spJ-Iu-abO"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="4E8-oO-Gdi" secondAttribute="bottom" constant="20" id="ylD-eO-TSp"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GSf-Xs-b7p"/>
+                                <exclude reference="spJ-Iu-abO"/>
+                                <exclude reference="4hm-4H-dmC"/>
+                                <exclude reference="ylD-eO-TSp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="BlurSlideView" destination="4E8-oO-Gdi" id="uHs-ki-UKL"/>
+                        <outlet property="blurImage" destination="NVw-hO-4UB" id="Ff2-cy-5SC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
