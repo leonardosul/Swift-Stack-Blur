@@ -65,7 +65,7 @@ extension UIImage {
         let byteCount = bytesPerRow * h
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo: CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedFirst.rawValue)
-        let context = CGBitmapContextCreate(nil, w, h, bitsPerComponent, bytesPerRow, colorSpace, bitmapInfo)
+        let context = CGBitmapContextCreate(nil, w, h, bitsPerComponent, bytesPerRow, colorSpace, CGImageAlphaInfo.PremultipliedFirst.rawValue)
         
         // Draw image to context.
         let rect = CGRectMake(0, 0, CGFloat(w), CGFloat(h))
@@ -337,7 +337,7 @@ extension UIImage {
         memcpy(data, out, byteCount)
 
         // Create a new context.
-        var contextOut = CGBitmapContextCreate(data, w, h, 8, bytesPerRow, colorSpace, bitmapInfo)
+        var contextOut = CGBitmapContextCreate(data, w, h, 8, bytesPerRow, colorSpace, CGImageAlphaInfo.PremultipliedFirst.rawValue)
         var cgimageOut = CGBitmapContextCreateImage(contextOut)
         
         // Clear data.
