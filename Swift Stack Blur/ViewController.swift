@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var newImage = UIImage(named: "Lakes")
+        let newImage = UIImage(named: "Lakes")
         
         self.blurImage.image = newImage
         
@@ -26,9 +26,9 @@ class ViewController: UIViewController {
     
     @IBAction func blurSlideChanged(sender: UISlider) {
         
-        var currentValue : Int = Int(sender.value)
+        let currentValue : Int = Int(sender.value)
         
-        var blurredImage = UIImage(named: "Lakes")
+        let blurredImage = UIImage(named: "Lakes")
         
         self.blurImage.image = blurredImage!.swiftStackBlur(currentValue)
     }
