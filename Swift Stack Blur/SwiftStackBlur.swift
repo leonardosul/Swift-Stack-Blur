@@ -95,7 +95,7 @@ extension UIImage {
         // Pointer for another stack.
         let divsum : Int = ((div + 1) >> 1)^^
         let dvcount : size_t  = 256 * divsum
-        var dv = UnsafeMutablePointer<Int>.alloc((sizeof(Int) * dvcount))
+        let dv = UnsafeMutablePointer<Int>.alloc((sizeof(Int) * dvcount))
         
         for i in 0..<dvcount {
             
@@ -108,7 +108,7 @@ extension UIImage {
         var stackStart : Int
         var sir : UnsafeMutablePointer<Int>
         var rbs : Int
-        var r1 : Int = Int(inRadius) + 1
+        let r1 : Int = Int(inRadius) + 1
         var routsum : Int = 0
         var goutsum : Int = 0
         var boutsum : Int = 0
@@ -216,7 +216,7 @@ extension UIImage {
                 ginsum -= sir[1]
                 binsum -= sir[2]
                 
-                yi++
+                yi += 1
             }
             
             yw += w
@@ -337,8 +337,8 @@ extension UIImage {
         memcpy(data, out, byteCount)
 
         // Create a new context.
-        var contextOut = CGBitmapContextCreate(data, w, h, 8, bytesPerRow, colorSpace, CGImageAlphaInfo.PremultipliedFirst.rawValue)
-        var cgimageOut = CGBitmapContextCreateImage(contextOut)
+        let contextOut = CGBitmapContextCreate(data, w, h, 8, bytesPerRow, colorSpace, CGImageAlphaInfo.PremultipliedFirst.rawValue)
+        let cgimageOut = CGBitmapContextCreateImage(contextOut)
         
         // Clear data.
         if data != nil {
@@ -350,6 +350,6 @@ extension UIImage {
         }
         
         // Return the blurred image.
-        return UIImage(CGImage: cgimageOut)!
+        return UIImage(CGImage: cgimageOut!)
     }
 }
